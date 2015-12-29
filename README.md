@@ -1,2 +1,3 @@
 # hyperdb
-Multidimensional object store
+
+Multidimensional object store.
