@@ -1,4 +1,4 @@
-package core
+package hyperdb
 
 // HyperObject is an interface expected to be implemented by the objects
 // that are about to be stored in the hyperdb.

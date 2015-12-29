@@ -1,4 +1,4 @@
-package core
+package hyperdb
 
 // DB represents a collection of objects with multitude of attributes,
 // that can be retrieved based all possible dimensions.

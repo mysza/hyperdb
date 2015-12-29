@@ -1,4 +1,4 @@
-package core
+package hyperdb
 
 // Attribute is a set property of an object that needs to be indexed in the db
 // to be easily findable.
