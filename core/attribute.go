@@ -15,14 +15,17 @@ type AttributeBase struct {
 	Value []byte
 }
 
-func (AttributeBase ab) GetType() string {
+// GetType returns the type of the AttributeBase object.
+func (ab AttributeBase) GetType() string {
 	return ab.Type
 }
 
-func (AttributeBase ab) GetName() string {
+// GetName returns the name of the AttributeBase object.
+func (ab AttributeBase) GetName() string {
 	return ab.Name
 }
 
-func (AttributeBase ab) GetValue() []byte {
+// GetValue returns the value of the AttributeBase object.
+func (ab AttributeBase) GetValue() []byte {
 	return ab.Value
 }
