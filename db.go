@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-const defaultDataFileName = "hyper.db"
+const DefaultDataFileName = "hyper.db"
 
 var (
 	ErrCannotCloseNilDB     = errors.New("attempted to close nil database")
@@ -23,7 +23,7 @@ type DB struct {
 // If the file doesn't exist, it is created automatically.
 func Open(path string) (*DB, error) {
 	if path == "" {
-		path = defaultDataFileName
+		path = DefaultDataFileName
 	}
 	db, err := bolt.Open(path, 0600, &bolt.Options{Timeout: 1 * time.Second})
 	if err != nil {
