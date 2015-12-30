@@ -16,7 +16,7 @@ func Open(path string) (*DB, error) {
 // The function returns unique id of the object stored in hyperdb that can
 // later be used to update or remove object in/from the namespace.
 func (db *DB) Add(namespace string, obj *HyperObject) (string, error) {
-	return 0, nil
+	return "", nil
 }
 
 // Update updates the object with specified unique id in the given namespace.
