@@ -15,17 +15,17 @@ func Open(path string) (*DB, error) {
 // accessible through GetData() method of the HyperObject.
 // The function returns unique id of the object stored in hyperdb that can
 // later be used to update or remove object in/from the namespace.
-func (db *DB) Add(namespace string, obj *HyperObject) (uint64, error) {
-	return nil
+func (db *DB) Add(namespace string, obj *HyperObject) (string, error) {
+	return 0, nil
 }
 
 // Update updates the object with specified unique id in the given namespace.
-func (db *DB) Update(namespace string, uid uint64, obj *HyperObject) error {
+func (db *DB) Update(namespace string, uid string, obj *HyperObject) error {
 	return nil
 }
 
 // Remove removes passed object from the given namespace
 // based on the unique id of the object.
-func (db *DB) Remove(namespace string, uid uint64) ([]byte, error) {
+func (db *DB) Remove(namespace string, uid string) ([]byte, error) {
 	return nil, nil
 }

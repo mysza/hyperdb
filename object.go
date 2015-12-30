@@ -6,7 +6,7 @@ type HyperObject interface {
 	// GetId returns a unique ID of the object the hyperdb client wants to
 	// use as a reference for the object. If 0 is returned, hyperdb assigns its
 	// own ID.
-	GetId() uint64
+	GetId() string
 	// GetAttributes returns a slice of all the attributes of the object.
 	GetAttributes() []Attribute
 	// GetData retuns a raw representation of the object.
