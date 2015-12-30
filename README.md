@@ -1,5 +1,5 @@
 # hyperdb
 
-[![Build Status](https://drone.io/github.com/mysza/hyperdb/status.png)](https://drone.io/github.com/mysza/hyperdb/latest)
+[![Circle CI](https://circleci.com/gh/mysza/hyperdb/tree/master.svg?style=svg)](https://circleci.com/gh/mysza/hyperdb/tree/master)
 
 Multidimensional object store.
