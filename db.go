@@ -2,15 +2,19 @@ package hyperdb
 
 import (
 	"errors"
-	"github.com/boltdb/bolt"
 	"time"
+
+	"github.com/boltdb/bolt"
 )
 
+// DefaultDataFileName is the default file name of the database file.
 const DefaultDataFileName = "hyper.db"
 
 var (
-	ErrCannotCloseNilDB     = errors.New("attempted to close nil database")
-	ErrCannotCloseNilBoltDB = errors.New("attemted to close nil Bolt database")
+	// ErrCannotCloseNilDB is an error returned when attempted to close nil database.
+	ErrCannotCloseNilDB = errors.New("attempted to close nil database")
+	// ErrCannotCloseNilBoltDB is an error returned when attempted to close nil Bolt database.
+	ErrCannotCloseNilBoltDB = errors.New("attempted to close nil Bolt database")
 )
 
 // DB represents a collection of objects with multitude of attributes,
