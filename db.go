@@ -43,21 +43,41 @@ func (db *DB) Close() error {
 	return db.boltHandle.Close()
 }
 
-// Add adds an object to the given namespace - indexes all attributes and stores data
-// accessible through GetData() method of the HyperObject.
-// The function returns unique id of the object stored in hyperdb that can
-// later be used to update or remove object in/from the namespace.
-func (db *DB) Add(namespace string, obj *HyperObject) (string, error) {
-	return "", nil
+// Get looks up the ids of the objects that fit the search criteria and returns them to the client.
+func (db *DB) Get(searchCriteria string) ([]string, error) {
+	return nil, nil
 }
 
-// Update updates the object with specified unique id in the given namespace.
-func (db *DB) Update(namespace string, uid string, obj *HyperObject) error {
+// Put adds an object to the database if it does not exist, or updates existing entries based on the new
+// object definition.
+// The function returns unique id of the object stored in hyperdb that can
+// later be used to update or remove object in/from the namespace.
+func (db *DB) Put(obj HyperObject) (string, error) {
+	objID := obj.GetID()
+	isNew := false
+	if len(objID) == 0 {
+		// new object, add to objects list
+		objID = db.assureID(obj)
+		isNew = true
+	}
+	// update the indexes
+	db.updateIndexes(objID, obj.GetAttributes(), isNew)
+	return objID, nil
+}
+
+// Remove removes passed object from the database
+// based on the unique id of the object.
+func (db *DB) Remove(uid string) error {
 	return nil
 }
 
-// Remove removes passed object from the given namespace
-// based on the unique id of the object.
-func (db *DB) Remove(namespace string, uid string) ([]byte, error) {
-	return nil, nil
+// assureID assures that given objects gets a unique ID in the database.
+func (db *DB) assureID(obj HyperObject) string {
+	return ""
+}
+
+// updateIndexes updates indexes assigned to an object with ID = uid.
+// If database has indexes on attributes not provided in the parameters, those indexes will be removed.
+func (db *DB) updateIndexes(uid string, attributes []Attribute, skipExistingCheck bool) error {
+	return nil
 }
